@@ -1,8 +1,9 @@
 <h1>Hello World</h1>
 
 <% @users.each do |u|  %>
-  <%= u.email %> | <%= link_to "Edit", edit_user_path(u) %>|
-  <%= link_to "Delete", u, :method => :delete %> <br />
+  <%= u.email %> | <%= link_to "Show", user_path(u) %>
+                 | <%= link_to "Edit", edit_user_path(u) %>
+                 | <%= link_to "Delete", u, :method => :delete %> <br />
 <% end %>
 
 
