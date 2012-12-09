@@ -1,1 +1,11 @@
-<h1>New User Tempalte</h1>
+<h1>New User Template</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :email, 'Email' %>
+  <%= f.text_field :email %><br />
+  <%= f.label :password, 'Password' %>
+  <%= f.text_field :password %><br />
+  <%= f.label :password_confirmation, 'Confirm Password' %>
+  <%= f.text_field :password_confirmation %><br />
+  <%= f.submit %>
+<% end %>
