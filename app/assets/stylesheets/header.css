@@ -1,0 +1,54 @@
+#header {
+  height: 160px;
+  background:#0063A6;
+  width:100%;
+}
+
+#hgroup .inner {
+}
+
+#hgroup h1 {
+    display: block;
+    padding: 20px 20px 0 20px;
+    margin: 0;
+    height: 95px;
+    color: #F0F0F0;
+    font-size: 40px;
+}
+
+#nav ul{
+  list-style:none;
+}
+
+#nav{
+    left: 0px;
+    padding: 0 20px;
+    position: relative;
+    top: 14px;
+    width: 980px;
+    z-index: 3;
+}
+
+#nav ul{
+    color: #fff;
+    float: left;
+    font-family: 'Helvetica Neue',Arial,sans-serif;
+    letter-spacing: 1px;
+    margin:0 0 0 -10px;
+}
+
+#nav ul li{
+    float: left;
+    padding:0 9px;
+}
+
+#nav ul li a{
+    color: #fff;
+    font-size:14px;
+    padding: 15px 10px 13px;
+}
+
+#nav ul li a:hover{
+    text-decoration: underline;
+}
+

@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Game</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Game</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="header">
+      <div id="hgroup">
+        <div class="inner">
+          <h1>Game Application</h1>
+          <div id="nav">
+            <ul>
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Users", users_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="inner">
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer">
+    </div>
+  </body>
 </html>
