@@ -20,9 +20,15 @@ describe "User Pages" do
       FactoryGirl.create(:user)
     end
 
+    # Why does the symbol not work for the visit user path, and the user without symbol does work?
+    # Check the FactoryGirl Docs?
+    # or Capybara Docs
+    # or Rails user_path doc
     before { visit user_path(user) }
 
     it { should have_selector("h1", :text => "User Show Page") }
+    it { should have_selector("h2", :text => user.name) }
+
   end
 
 end
