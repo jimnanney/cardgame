@@ -40,7 +40,8 @@ describe "User Pages" do
     before { visit new_user_path }
 
     it { should have_selector('h1', text:'New User Template') }
-
+    it { should have_selector('#user_email') }
+    it { should have_selector('#user_name') }
 
     # Pending "set new user signup page test"
     # visit new_user_path
