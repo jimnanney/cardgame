@@ -48,5 +48,27 @@ describe "User Pages" do
     # Pending "set new user signup page test"
     # visit new_user_path
   end
+
+  describe "#edit" do
+   subject { page }
+
+   let(:user) do
+     FactoryGirl.create(:user)
+   end
+
+   before { visit edit_user_path(user) }
+
+   it { should have_selector('h1', :text => "Edit User") }
+   it { should have_selector('h2', :text => "#{user.name}") }
+
+   it { should have_field('user_name', :with => "#{user.name}") }
+   it { should have_field('user_email', :with => "#{user.email}") }
+   it { should have_field('user_password') }
+   it { should have_field('user_password_confirmation') }
+  
+  
+  end
+
+
 end
 

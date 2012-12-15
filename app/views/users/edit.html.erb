@@ -1,6 +1,15 @@
-<h1>Edit user: <%= @user.email %></h1>
+<h1>Edit User</h1>
+<h2><%= @user.name %></h2>
 
 <%= form_for @user do |f| %>
-
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name %><br />
+  <%= f.label :email, 'Email' %>
+  <%= f.text_field :email %><br />
+  <%= f.label :password, 'Password' %>
+  <%= f.password_field :password %><br />
+  <%= f.label :password_confirmation, 'Confirm Password' %>
+  <%= f.password_field :password_confirmation %><br />
+  <%= f.submit %>
 <% end %>
 
