@@ -42,6 +42,8 @@ describe "User Pages" do
     it { should have_selector('h1', text:'New User Template') }
     it { should have_selector('#user_email') }
     it { should have_selector('#user_name') }
+    it { should have_selector('#user_password') }
+    it { should have_selector('#user_password_confirmation') }
 
     # Pending "set new user signup page test"
     # visit new_user_path
