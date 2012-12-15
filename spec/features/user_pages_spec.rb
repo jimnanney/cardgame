@@ -31,5 +31,19 @@ describe "User Pages" do
 
   end
 
+  describe "#new" do
+
+    subject { page }
+
+    #    visit new_user_path
+    # Check RSPEC Docs for why before is needed to find the new_user_path
+    before { visit new_user_path }
+
+    it { should have_selector('h1', text:'New User Template') }
+
+
+    # Pending "set new user signup page test"
+    # visit new_user_path
+  end
 end
 
