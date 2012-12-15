@@ -1,20 +1,14 @@
 require 'spec_helper'
 
 describe "User Pages" do
-  
+  subject { page }
 
   describe "#index" do
-    subject { page }
-  
     before { visit users_path }
-    
     it { should have_selector("h1", :text => "Hello World") }
-
   end
 
   describe "#show" do
-    
-    subject { page }
     
     let(:user) do
       FactoryGirl.create(:user)
@@ -32,9 +26,6 @@ describe "User Pages" do
   end
 
   describe "#new" do
-
-    subject { page }
-
     #    visit new_user_path
     # Check RSPEC Docs for why before is needed to find the new_user_path
     before { visit new_user_path }
@@ -50,7 +41,6 @@ describe "User Pages" do
   end
 
   describe "#edit" do
-   subject { page }
 
    let(:user) do
      FactoryGirl.create(:user)
@@ -69,6 +59,19 @@ describe "User Pages" do
   
   end
 
+  describe "#create" do
+    before do
+      visit new_user_path 
+      fill_in "Name", with:"Better Typist"
+    end
+    it "should create user" do
+      expect { click_button "Create User" }.to change(User, :count).by(1)
+      should have_selector("h1", :text => "User Show Page")
+      should have_selector("h2", :text => "Better Typist")
+    end
+    
+
+  end
 
 end
 
