@@ -69,9 +69,20 @@ describe "User Pages" do
       should have_selector("h1", :text => "User Show Page")
       should have_selector("h2", :text => "Better Typist")
     end
-    
-
   end
 
+  describe "#destroy" do
+    before do
+      @user = User.new 
+      @user.name = "Horrid Typist"
+      @user.save
+      @user.destroy
+    end
+
+    it "Should be nil" do
+      User.find_by_name("Horrid Typist").should be_nil
+    end
+
+  end
 end
 
