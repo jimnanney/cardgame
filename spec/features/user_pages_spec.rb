@@ -45,9 +45,11 @@ describe "User Pages" do
    let(:user) do
      FactoryGirl.create(:user)
    end
+   let(:new_name) { "Test User" }
+   let(:new_email) { "testuser@example" }
 
    before { visit edit_user_path(user) }
-
+   
    it { should have_selector('h1', :text => "Edit User") }
    it { should have_selector('h2', :text => "#{user.name}") }
 
@@ -56,7 +58,19 @@ describe "User Pages" do
    it { should have_field('user_password') }
    it { should have_field('user_password_confirmation') }
   
-  
+    describe "update with valid info" do
+      before do
+        fill_in "user_name", :with => new_name
+        fill_in "user_email", :with => new_email
+        click_button 'Update User'
+       end
+
+      it { should have_selector("h1", :text => "User Show Page") }
+      it { should have_selector("div.alert.alert-success") }
+      specify { user.reload.name.should == new_name }
+      specify { user.reload.email.should == new_email }
+    end
+
   end
 
   describe "#create" do
