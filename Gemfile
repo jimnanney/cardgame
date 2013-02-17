@@ -8,15 +8,19 @@ gem 'unicorn'
 
 gem 'sqlite3'
 
-group :development do
+group :development, :test do
   # Rspec
   gem 'rspec-rails'
+  gem 'guard-rspec', '1.2.1'
+  gem 'guard-spork', :github => 'guard/guard-spork'
+  gem 'spork', '0.9.2'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'rb-fsevent', '0.9.1', :require => false
+  gem 'growl' , '1.0.3'
 end
 
 # Gems used only for assets and not required
