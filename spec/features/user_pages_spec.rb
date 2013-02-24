@@ -77,6 +77,7 @@ describe "User Pages" do
     before do
       visit new_user_path 
       fill_in "Name", with:"Better Typist"
+      fill_in "Email", with: "lolcat@example.com"
     end
     it "should create user" do
       expect { click_button "Create User" }.to change(User, :count).by(1)
