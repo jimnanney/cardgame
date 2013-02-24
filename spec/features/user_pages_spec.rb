@@ -62,6 +62,8 @@ describe "User Pages" do
       before do
         fill_in "user_name", :with => new_name
         fill_in "user_email", :with => new_email
+        fill_in "user_password", with: "foobarpass"
+        fill_in "user_password_confirmation", with: "foobarpass"
         click_button 'Update User'
        end
 
@@ -78,6 +80,8 @@ describe "User Pages" do
       visit new_user_path 
       fill_in "Name", with:"Better Typist"
       fill_in "Email", with: "lolcat@example.com"
+      fill_in "user_password", with: "foobarpass"
+      fill_in "user_password_confirmation", with: "foobarpass"
     end
     it "should create user" do
       expect { click_button "Create User" }.to change(User, :count).by(1)
